@@ -1,0 +1,34 @@
+﻿.logo {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-family: Metropolis;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.navbartop {
+  background-color: #002069;
+  width: 100%;
+}
+
+.navbarlow {
+  background-color: #222;
+  width: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.socialmedia {
+  color: white;
+}
+
+.navbardropdown{
+  background-color: #222;
+}
+
+.navdropdown > a {
+  color: #ffc107;
+}

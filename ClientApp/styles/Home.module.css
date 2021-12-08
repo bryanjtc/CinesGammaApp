@@ -1,0 +1,34 @@
+.home {
+  overflow: auto;
+}
+
+.title {
+  background-color: #0b5ba1;
+  font-size: 27px;
+}
+
+.icon {
+  color: white;
+  background-color: #0a4980;
+  height: 100%;
+  font-size: 27px;
+}
+
+.pelicula {
+  width: 139px;
+  height: 204px;
+  background-color: #0a4980;
+  color: white;
+}
+
+.tarjetaextra {
+  width: 139px;
+  height: 204px;
+  color: #0a4980;
+  font-size: 15px;
+}
+
+.icon2 {
+  color: #0a4980;
+  font-size: 15px;
+}
