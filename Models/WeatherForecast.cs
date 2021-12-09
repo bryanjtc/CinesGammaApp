@@ -1,6 +1,6 @@
 using System;
 
-namespace CinesGammaApp
+namespace CinesGammaApp.Models
 {
     public class WeatherForecast
     {

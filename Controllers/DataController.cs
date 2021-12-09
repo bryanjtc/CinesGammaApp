@@ -6,13 +6,14 @@ using System.Linq;
 using System.IO;
 using System;
 using System.Diagnostics;
+using CinesGammaApp.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace CryptBD2App.Controllers
+namespace CinesController.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("tarea/[controller]")]
     public class DataController : ControllerBase
     {
         readonly Aes myAes = Aes.Create();

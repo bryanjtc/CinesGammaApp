@@ -1,0 +1,13 @@
+.thead {
+  background-color: #0b5ba1;
+  color: white;
+  border-color: #0b5ba1;
+}
+
+.tbody {
+  border-color: #0b5ba1;
+}
+
+.tcell {
+  color: #0b5ba1;
+}

@@ -1,4 +1,4 @@
-﻿namespace CinesGammaApp
+﻿namespace CinesGammaApp.Models
 {
     public class Data
     {

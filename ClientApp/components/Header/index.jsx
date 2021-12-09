@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 
 const Header = () => (
   <header className={styles.header}>
-    <Navbar className="shadow-sm d-flex flex-column p-0 m-0" expand="sm" >
+    <Navbar className="shadow-sm d-flex flex-column p-0 m-0" expand="sm">
       <div className={styles.navbartop}>
         <Container className="py-3 d-flex justify-content-between align-items-center">
           <>
@@ -19,18 +19,14 @@ const Header = () => (
           </>
           <div className="d-flex flex-wrap flex-row gap-3 justify-content-end">
             <Dropdown>
-              <Dropdown.Toggle className="bg-light text-dark" >
-                Panamá, Panamá
-              </Dropdown.Toggle>
+              <Dropdown.Toggle className="bg-light text-dark">Panamá, Panamá</Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>Selecciona una ciudad</Dropdown.Item>
                 <Dropdown.Item>Panamá, Panamá</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Dropdown>
-              <Dropdown.Toggle className="bg-light text-dark" >
-                Selecciona un cine
-              </Dropdown.Toggle>
+              <Dropdown.Toggle className="bg-light text-dark">Selecciona un cine</Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
@@ -48,16 +44,15 @@ const Header = () => (
           <Navbar.Toggle className={styles.navdropdown} />
           <Navbar.Collapse className={styles.navbarlow}>
             <NavDropdown title="Menu" menuVariant="dark" className={styles.navdropdown}>
-              <NavDropdown.Item className={styles.navdropdown}>
-                <Link href="/" passHref>
-                  Peliculas
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className={styles.navdropdown}>
-                <Link href="/tarea" passHref>
-                  Cartelera
-                </Link>
-              </NavDropdown.Item>
+              <Link href="/cines" passHref>
+                <NavDropdown.Item>Cines</NavDropdown.Item>
+              </Link>
+              <Link href="/tarea" passHref>
+                <NavDropdown.Item>Tarea</NavDropdown.Item>
+              </Link>
+              <Link href="/fetch-data" passHref>
+                <NavDropdown.Item>Fetch data</NavDropdown.Item>
+              </Link>
             </NavDropdown>
           </Navbar.Collapse>
           <div className="d-flex gap-3">
