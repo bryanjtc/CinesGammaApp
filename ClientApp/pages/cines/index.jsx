@@ -129,7 +129,7 @@ const Cines = () => {
                 )}
               </tbody>
             </Table>
-            <Button variant="primary">Editar informacion</Button>{' '}
+            {seleccionado && <Button variant="primary">Editar informacion</Button>}
           </section>
         )}
         {seleccionado && (

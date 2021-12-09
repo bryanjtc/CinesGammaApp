@@ -3,11 +3,11 @@ import Button from 'react-bootstrap/Button';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
-import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import uniqid from 'uniqid';
 import styles from './styles.module.css';
 
@@ -130,7 +130,15 @@ const Peliculas = () => {
         <div className="maintop mb-5 d-flex justify-content-between align-items-center">
           <h1 className="fw-bold">Peliculas</h1>
           <div className="maintopright d-flex flex-row-reverse align-items-end gap-3">
-            <Button variant="outline-primary">Nueva Sucursal</Button>
+            <Link href="/peliculas/agregarcontenido">
+              <Button variant="outline-primary">Nueva Pelicula</Button>
+            </Link>
+            <Link href="/peliculas/editarcontenido">
+              <Button variant="warning">Editar Pelicula</Button>
+            </Link>
+            <Link href="/peliculas/eliminarcontenido">
+              <Button variant="danger">Eliminar Pelicula</Button>
+            </Link>
             <div className="options">
               <DropdownButton id="dropdown-basic-button" title={opcionSeleccion}>
                 {['Todas', 'Proyectadas en sala, sin calificar', 'No proyectadas en sala'].map(

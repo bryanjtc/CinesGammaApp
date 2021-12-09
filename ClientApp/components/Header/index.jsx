@@ -58,9 +58,6 @@ const Header = () => (
               <Link href="/salas" passHref>
                 <NavDropdown.Item>Salas</NavDropdown.Item>
               </Link>
-              <Link href="/tarea" passHref>
-                <NavDropdown.Item>Tarea</NavDropdown.Item>
-              </Link>
             </NavDropdown>
           </Navbar.Collapse>
           <div className="d-flex gap-3">
