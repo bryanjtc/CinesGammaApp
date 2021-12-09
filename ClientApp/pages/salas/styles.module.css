@@ -1,0 +1,7 @@
+.tarjeta {
+  width: 367px;
+}
+
+.nombre:first-letter {
+  text-transform:capitalize;
+}

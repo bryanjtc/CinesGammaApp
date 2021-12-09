@@ -27,9 +27,13 @@ const Header = () => (
             <Dropdown>
               <Dropdown.Toggle className="bg-light text-dark">Selecciona un cine</Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item>Multiplaza</Dropdown.Item>
+                <Dropdown.Item>Metromall</Dropdown.Item>
+                <Dropdown.Item>Albrook Mall</Dropdown.Item>
+                <Dropdown.Item>Altaplaza Mall</Dropdown.Item>
+                <Dropdown.Item>Los Andes Mall</Dropdown.Item>
+                <Dropdown.Item>Westland Mall</Dropdown.Item>
+                <Dropdown.Item>Anclas Mall & Plaza</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Link href="/cartelera" passHref>
@@ -50,6 +54,9 @@ const Header = () => (
               </Link>
               <Link href="/peliculas" passHref>
                 <NavDropdown.Item>Peliculas</NavDropdown.Item>
+              </Link>
+              <Link href="/salas" passHref>
+                <NavDropdown.Item>Salas</NavDropdown.Item>
               </Link>
               <Link href="/tarea" passHref>
                 <NavDropdown.Item>Tarea</NavDropdown.Item>

@@ -159,7 +159,7 @@ const Peliculas = () => {
           <section className="listapeliculas">
             {cines.map((cine) => (
               <div key={uniqid()}>
-                <h5 className="fw-bold my-4">{cine.nombre}</h5>
+                <h5 className="fw-bold mb-3 mt-5">{cine.nombre}</h5>
                 <div className="d-flex flex-wrap gap-5">
                   {eventos.map(
                     (evento) =>

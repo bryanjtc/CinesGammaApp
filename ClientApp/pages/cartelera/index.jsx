@@ -118,7 +118,7 @@ const Cartelera = () => {
   return (
     <main className={`w-100 my-5 ${styles.Peliculas}`}>
       <Head>
-        <title>Peliculas</title>
+        <title>Cartelera</title>
       </Head>
       <Container>
         {loading ? (
