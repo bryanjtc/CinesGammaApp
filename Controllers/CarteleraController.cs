@@ -10,12 +10,12 @@ using CinesGammaApp.Models;
 namespace CinesGammaApp.Controllers
 {
     [ApiController]
-    [Route("cines/[controller]")]
-    public class CinesController : ControllerBase
+    [Route("cartelera/[controller]")]
+    public class CarteleraController : ControllerBase
     {
 
         private readonly IConfiguration _configuration;
-        public CinesController(IConfiguration configuration)
+        public CarteleraController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -24,8 +24,8 @@ namespace CinesGammaApp.Controllers
         public JsonResult Get()
         {
             string query = @"
-                            select id_cine, RUC, nombre, ciudad, direccion, telefono from
-                            dbo.cine
+                            select id_contenido, titulo, director, duracion, año, calificacion, genero, distribuidora, fecha_estreno, tipo
+                            from dbo.contenido
                             ";
 
             DataTable table = new DataTable();
@@ -36,35 +36,6 @@ namespace CinesGammaApp.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-                    myReader.Close();
-                    myCon.Close();
-                }
-            }
-
-            return new JsonResult(table);
-        }
-
-        [HttpGet("{id}")]
-        public JsonResult Get(int id)
-        {
-            string query = @"
-                            select id_sala, id_cine, nombre, id_soporte from
-                            dbo.sala
-                            where id_cine = @id_cine
-                            ";
-
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myCommand.Parameters.AddWithValue("@id_cine", id);
-
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -79,10 +50,86 @@ namespace CinesGammaApp.Controllers
         public JsonResult GetEventos()
         {
             string query = @"
-                            select sala.id_sala, count(evento.id_sala) as Cantidad_de_Eventos 
+                            select id_cine, id_contenido, hora_emision, id_sala 
                             from dbo.evento
-                            INNER JOIN sala on evento.id_sala = sala.id_sala
-                            group by sala.id_sala, sala.nombre, sala.id_soporte
+                            ";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult(table);
+        }
+
+        [HttpGet("cines")]
+        public JsonResult GetCines()
+        {
+            string query = @"
+                            select id_cine, nombre
+                            from dbo.cine
+                            ";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult(table);
+        }
+
+        [HttpGet("salas")]
+        public JsonResult GetSalas()
+        {
+            string query = @"
+                            select id_cine, id_sala, id_soporte 
+                            from dbo.sala
+                            ";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult(table);
+        }
+
+        [HttpGet("soportes")]
+        public JsonResult GetSoportes()
+        {
+            string query = @"
+                            select titulo, id_soporte 
+                            from dbo.soporte
                             ";
 
             DataTable table = new DataTable();

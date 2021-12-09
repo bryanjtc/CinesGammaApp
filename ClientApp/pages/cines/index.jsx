@@ -15,6 +15,7 @@ const Cines = () => {
   const [loading, setLoading] = useState(true);
   const [seleccionado, setSeleccionado] = useState(false);
   const [salas, setSalas] = useState([]);
+  const [eventos, setEventos] = useState([]);
   const fetchData = async () => {
     try {
       const response = await axios.get('cines');
@@ -38,7 +39,19 @@ const Cines = () => {
     setOpcionSeleccion(nombre);
     setTitulo(`Cine - ${nombre}`);
     setSeleccionado(true);
+    fetchDataEventos();
     fetchDataSala(id);
+  };
+
+  const fetchDataEventos = async () => {
+    try {
+      const response = await axios.get('cines/eventos');
+      const data = await response.data;
+      setEventos(data);
+      console.log(eventos);
+    } catch (err) {
+      console.error(err);
+    }
   };
   useEffect(() => {
     fetchData();
@@ -137,6 +150,14 @@ const Cines = () => {
                     <td className={styles.tcell}>{sala.id_sala}</td>
                     <td className={styles.tcell}>{sala.nombre}</td>
                     <td className={styles.tcell}>{sala.id_soporte}</td>
+                    {eventos.map(
+                      (evento) =>
+                        evento.id_sala === sala.id_sala && (
+                          <td key={sala.id_sala} className={styles.tcell}>
+                            {evento.Cantidad_de_Eventos}
+                          </td>
+                        ),
+                    )}
                   </tr>
                 ))}
               </tbody>

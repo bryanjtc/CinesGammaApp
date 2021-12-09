@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
@@ -6,6 +5,7 @@ import axios from 'axios';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 const Home = () => (
   <main className={`w-100 my-5 ${styles.home}`}>
@@ -58,11 +58,11 @@ const Home = () => (
         >
           <h5>PhD. Juan Marcos</h5>
         </div>
-        <Button variant={`outline-primary ${styles.tarjetaextra}`}>
-          <div className={`d-flex align-items-center justify-content-center text-center`}>
-            <h5>Consultar cartelera completa</h5>
-          </div>
-        </Button>
+        <Link href="/cartelera" passHref>
+          <Button variant="outline-primary" className={`${styles.tarjetaextra} d-flex align-items-center justify-content-center text-center`}>
+              <h5>Consultar cartelera completa</h5>
+          </Button>
+        </Link>
       </section>
     </Container>
   </main>

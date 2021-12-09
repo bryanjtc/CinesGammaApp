@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -33,9 +32,11 @@ const Header = () => (
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <Button variant="warning" className="fw-bold">
-              Ver Cartelera
-            </Button>
+            <Link href="/cartelera" passHref>
+              <Button variant="warning" className="fw-bold">
+                Ver Cartelera
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>
@@ -47,11 +48,11 @@ const Header = () => (
               <Link href="/cines" passHref>
                 <NavDropdown.Item>Cines</NavDropdown.Item>
               </Link>
+              <Link href="/peliculas" passHref>
+                <NavDropdown.Item>Peliculas</NavDropdown.Item>
+              </Link>
               <Link href="/tarea" passHref>
                 <NavDropdown.Item>Tarea</NavDropdown.Item>
-              </Link>
-              <Link href="/fetch-data" passHref>
-                <NavDropdown.Item>Fetch data</NavDropdown.Item>
               </Link>
             </NavDropdown>
           </Navbar.Collapse>
