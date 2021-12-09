@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="shortcut icon" href="/favicon.ico" />
-          <meta name="description" content="Testing encryption using dll" />
+          <meta name="description" content="CinesGammaApp" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />

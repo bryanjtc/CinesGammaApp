@@ -1,6 +1,6 @@
 {
-    "name": "Crypto BDD2",
-    "short_name": "CryptoBDD2",
+    "name": "CinesGammaApp",
+    "short_name": "CinesGamma",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
