@@ -6,7 +6,7 @@
     "axios": "0.27.2",
     "bootstrap": "5.2.0",
     "bootstrap-icons": "1.9.1",
-    "next": "12.2.2",
+    "next": "12.2.3",
     "next-pwa": "5.5.4",
     "react": "18.2.0",
     "react-bootstrap": "2.4.0",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@babel/core": "7.18.9",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2",
+    "eslint-config-next": "12.2.3",
     "postcss": "8.4.14",
     "prettier": "2.7.1"
   },
