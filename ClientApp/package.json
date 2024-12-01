@@ -18,7 +18,7 @@
     "eslint": "9.16.0",
     "eslint-config-next": "15.0.3",
     "postcss": "8.4.49",
-    "prettier": "3.3.3",
+    "prettier": "3.4.1",
     "serwist": "^9.0.9"
   },
   "scripts": {
